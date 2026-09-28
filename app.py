@@ -105,16 +105,25 @@ st.markdown(
 
     .custom-footer {
         position: fixed;
-        bottom: 16px;
+        bottom: 70px;
         left: 16px;
-        padding: 8px 16px;
-        font-size: 13px;
+        padding: 6px 14px;
+        font-size: 12px;
         font-weight: 600;
         color: white;
         background: linear-gradient(135deg, #7C3AED, #3B82F6);
         border-radius: 999px;
         box-shadow: 0 4px 12px rgba(0,0,0,0.25);
         z-index: 100;
+        max-width: 200px;
+    }
+
+    @media (max-width: 600px) {
+        .custom-footer {
+            bottom: 80px;
+            font-size: 11px;
+            padding: 5px 12px;
+        }
     }
 </style>
 
