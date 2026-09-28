@@ -104,26 +104,21 @@ st.markdown(
     }
 
     .custom-footer {
-        position: fixed;
-        bottom: 70px;
-        left: 16px;
+        display: inline-flex;
+        align-items: center;
+        gap: 6px;
+        margin: 24px auto 8px auto;
         padding: 6px 14px;
         font-size: 12px;
         font-weight: 600;
         color: white;
         background: linear-gradient(135deg, #7C3AED, #3B82F6);
         border-radius: 999px;
-        box-shadow: 0 4px 12px rgba(0,0,0,0.25);
-        z-index: 100;
-        max-width: 200px;
     }
-
-    @media (max-width: 600px) {
-        .custom-footer {
-            bottom: 80px;
-            font-size: 11px;
-            padding: 5px 12px;
-        }
+    .footer-wrap {
+        display: flex;
+        justify-content: center;
+    }
     }
 </style>
 
@@ -139,7 +134,6 @@ st.markdown(
     <span>Hey there! Upload a PDF below and ask me anything — I'll answer from the document, and can search the web for anything it doesn't cover.</span>
 </div>
 
-<div class="custom-footer">✨ Built by Shikhar Shankar Singh</div>
 """,
     unsafe_allow_html=True,
 )
@@ -312,3 +306,8 @@ if st.session_state.vector_store is not None:
             {"role": "assistant", "content": answer, "sources": sources}
         )
         st.rerun()
+
+st.markdown(
+    '<div class="footer-wrap"><div class="custom-footer">✨ Built by Shikhar Shankar Singh</div></div>',
+    unsafe_allow_html=True,
+)
